@@ -20,7 +20,7 @@ public class Library {
                 if (books[j] == null){
                     books[j] = newBooks[i];
                     break;
-                }
+                } if (j == books.length - 1) System.out.println("Книга " + newBooks[i] + " не влезает в библиотеку");
             }
         }
     }
