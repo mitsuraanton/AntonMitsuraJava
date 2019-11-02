@@ -27,4 +27,8 @@ abstract public class FarmAnimal extends Animal {
     public void setInitialHealth() {
         this.initialHealth = this.health;
     }
+
+    public int getInitialHealth() {
+        return initialHealth;
+    }
 }

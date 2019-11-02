@@ -2,7 +2,7 @@ package com.domain.lesson6.units;
 
 public class King extends Unit {
 
-    public King(String name, int speed, int health) {
+    private King(String name, int speed, int health) {
         super(name, speed);
         this.health = health;
     }
@@ -19,5 +19,9 @@ public class King extends Unit {
     @Override
     public void rest() {
         System.out.println("Король опочивает");
+    }
+
+    public static King createNewKing(){
+        return new King("Ричард", 3, 16);
     }
 }
