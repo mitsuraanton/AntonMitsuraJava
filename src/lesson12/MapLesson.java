@@ -74,10 +74,10 @@ public class MapLesson {
         System.out.println(treeMap);
 
         ClassLoader loader = MapLesson.class.getClassLoader();
-        File file = new File(loader.getResource("resources/wp.txt").getFile());
+        File file = new File(loader.getResource("wp.txt").getFile());
 
         List<String> strings = Files.readAllLines(file.toPath());
-        numberOfWordOccuranceInText(strings, "he");
+        System.out.println("Number of occurance word he in text: " + numberOfWordOccuranceInText(strings, "he"));
 
     }
 
