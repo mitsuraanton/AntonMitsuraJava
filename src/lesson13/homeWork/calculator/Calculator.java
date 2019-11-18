@@ -15,29 +15,30 @@ public class Calculator {
             if ("exit".equals(inputExpression)) break;
             try {
                 checkInputExpression(inputExpression);
+                if (inputExpression.contains("+")){
+                    int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("+")));
+                    int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("+") + 1)));
+                    System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue + secondValue));
+                }
+                else if (inputExpression.contains("-")){
+                    int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("-")));
+                    int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("-") + 1)));
+                    System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue - secondValue));
+                }
+                else if (inputExpression.contains("*")){
+                    int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("*")));
+                    int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("*") + 1)));
+                    System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue * secondValue));
+                }
+                else if (inputExpression.contains("/")){
+                    int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("/")));
+                    int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("/") + 1)));
+                    System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue / secondValue));
+                }
             } catch (WrongOperatorException | MissingNOrMException | DividingByZeroOrNotIntValueException e) {
                 System.out.println(e.getMessage());
             }
-            if (inputExpression.contains("+")){
-                int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("+")));
-                int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("+") + 1)));
-                System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue + secondValue));
-            }
-            else if (inputExpression.contains("-")){
-                int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("-")));
-                int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("-") + 1)));
-                System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue - secondValue));
-            }
-            else if (inputExpression.contains("*")){
-                int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("*")));
-                int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("*") + 1)));
-                System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue * secondValue));
-            }
-            else if (inputExpression.contains("/")){
-                int firstValue = Integer.valueOf(inputExpression.substring(0, inputExpression.indexOf("/")));
-                int secondValue = Integer.valueOf(inputExpression.substring((inputExpression.indexOf("/") + 1)));
-                System.out.println("Результат вычисления выражения " + inputExpression + " == " + (firstValue / secondValue));
-            }
+
         }
     }
 
