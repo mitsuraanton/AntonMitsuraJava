@@ -1,6 +1,7 @@
-package lesson19.homeWork.tasks.task3;
+package beforeDecember.lesson19.homeWork.tasks.task3;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Pupil {
     enum Gender {
@@ -61,5 +62,18 @@ public class Pupil {
                 ", gender=" + gender +
                 ", birth=" + birth +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pupil)) return false;
+        Pupil pupil = (Pupil) o;
+        return getBirth().equals(pupil.getBirth());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBirth());
     }
 }
