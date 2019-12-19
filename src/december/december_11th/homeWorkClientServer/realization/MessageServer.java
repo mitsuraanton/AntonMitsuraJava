@@ -45,6 +45,7 @@ public class MessageServer {
 
         @Override
         public void run() {
+            Thread.currentThread().setPriority(8);
             while (true) {
                 try {
                     // СОЗДАТЬ СПИСОК ИЗ МАК КОННЕКШЕНОВ. В МАПЕ ИМЯ КЛИЕНТА И ЕГО КОННЕКШЕН. ДАЛЬШЕ ОТПРАВЛЯТЬ СЕССАГУ ТОЛЬКО ТЕМ, КОМУ НАДО
@@ -69,6 +70,7 @@ public class MessageServer {
 
         @Override
         public void run() {
+            Thread.currentThread().setPriority(10);
             while (true) {
                 // СОЗДАТЬ СПИСОК ИЗ МАК КОННЕКШЕНОВ. В МАПЕ ИМЯ КЛИЕНТА И ЕГО КОННЕКШЕН. ДАЛЬШЕ ОТПРАВЛЯТЬ СЕССАГУ ТОЛЬКО ТЕМ, КОМУ НАДО
                 for (Connection connection : connections.keySet()) {
@@ -99,6 +101,7 @@ public class MessageServer {
 
         @Override
         public void run() {
+            Thread.currentThread().setPriority(9);
             Message message;
             while (true) {
                 // СОЗДАТЬ СПИСОК ИЗ МАК КОННЕКШЕНОВ. В МАПЕ ИМЯ КЛИЕНТА И ЕГО КОННЕКШЕН. ДАЛЬШЕ ОТПРАВЛЯТЬ СЕССАГУ ТОЛЬКО ТЕМ, КОМУ НАДО

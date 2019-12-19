@@ -21,6 +21,7 @@ public class MessageClient {
 
         @Override
         public void run() {
+            Thread.currentThread().setPriority(9);
             try {
                 new Thread(new Sender("Client 4", connection)).start();
             } catch (IOException e) {
@@ -52,6 +53,7 @@ public class MessageClient {
 
         @Override
         public void run() {
+            Thread.currentThread().setPriority(10);
             while (true) {
                 try {
                     System.out.println("Введите сообщение для отправки на сервер");
